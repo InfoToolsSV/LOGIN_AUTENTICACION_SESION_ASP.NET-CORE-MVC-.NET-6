@@ -1,0 +1,20 @@
+@model Usuario
+
+<form method="post" asp-action="Login" asp-controller="Cuenta">
+    <h1 class="h3 mb-3">Inicio de sesion</h1>
+    <div class="form-floating">
+        <input type="text" class="form-control" required asp-for="UserName" />
+        <label for="floatingInput">UserName</label>
+    </div>
+    <div class="form-floating">
+        <input type="password" class="form-control" required asp-for="Clave" />
+        <label for="floatingPassword">Password</label>
+    </div>
+    <div class=" checkbox mb-3">
+        <label>
+            <input type="checkbox" asp-for="MantenerActivo" /> Recordar sesion
+        </label>
+    </div>
+    <button type="submit" class="btn-lg btn-primary">Ingresar</button>
+    <label class="alert-danger">@ViewBag.Error</label>
+</form>
